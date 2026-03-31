@@ -23,7 +23,7 @@ source_channels = [
 target_channel = "dataflow123"
 
 # 💾 File to store last message IDs
-STATE_FILE = "state.json"
+STATE_FILE = "/app/sessions/state.json"
 
 
 # 📦 Load saved state
@@ -42,7 +42,7 @@ def save_state(state):
 
 
 async def main():
-    client = TelegramClient("userbot", api_id, api_hash)
+    client = TelegramClient("/app/sessions/userbot", api_id, api_hash)
     await client.start()
     print("Userbot running with memory...")
 
